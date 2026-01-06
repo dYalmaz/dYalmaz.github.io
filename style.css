@@ -1,30 +1,118 @@
+/* --- General Reset & Variables --- */
+:root {
+    --primary-color: #2563eb;    /* Professional Blue */
+    --secondary-color: #64748b;  /* Slate Grey */
+    --bg-color: #f8fafc;         /* Off-white background */
+    --text-color: #1e293b;
+    --card-bg: #ffffff;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Layout Containers --- */
+header, section, footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
 }
 
 header {
     text-align: center;
-    margin-bottom: 40px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-h1 {
-    margin-bottom: 5px;
+header h1 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
 }
 
-section {
-    margin-bottom: 30px;
-}
-
+/* --- Project Cards --- */
 .project {
-    border-left: 4px solid #333;
-    padding-left: 15px;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
-a {
-    color: #0066cc;
+.project:hover {
+    transform: translateY(-4px);
+}
+
+.project.featured {
+    border-left: 5px solid var(--primary-color);
+}
+
+.project h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* --- Buttons & Links --- */
+.project-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
     text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+
+.btn.secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* --- Skills List --- */
+#skills ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+#skills li {
+    background: #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 2rem 0;
 }
